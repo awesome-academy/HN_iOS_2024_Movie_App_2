@@ -1,0 +1,19 @@
+strings:
+  inputs: MovieHubRx/Resource/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: MovieHubRx/SwiftGen/Localizable.swift
+
+xcassets:
+  inputs:
+    - MovieHubRx/Resource/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: MovieHubRx/SwiftGen/Assets.swift
+      
+colors:
+  inputs:
+    - MovieHubRx/Resource/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      output: MovieHubRx/SwiftGen/Colors.swift

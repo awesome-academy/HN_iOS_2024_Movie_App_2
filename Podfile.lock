@@ -1,0 +1,65 @@
+PODS:
+  - Alamofire (5.9.1)
+  - Localize-Swift (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
+    - Localize-Swift/UIKit (= 3.2.0)
+  - Localize-Swift/LocalizeSwiftCore (3.2.0)
+  - Localize-Swift/UIKit (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore
+  - ObjectMapper (4.4.2)
+  - Reusable (4.1.2):
+    - Reusable/Storyboard (= 4.1.2)
+    - Reusable/View (= 4.1.2)
+  - Reusable/Storyboard (4.1.2)
+  - Reusable/View (4.1.2)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SDWebImage (5.19.1):
+    - SDWebImage/Core (= 5.19.1)
+  - SDWebImage/Core (5.19.1)
+  - SwiftLint (0.54.0)
+  - Then (3.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.9.1)
+  - Localize-Swift (~> 3.2)
+  - ObjectMapper (~> 4.4.2)
+  - Reusable (= 4.1.2)
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
+  - SDWebImage (~> 5.0)
+  - SwiftLint (= 0.54.0)
+  - Then (= 3.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Localize-Swift
+    - ObjectMapper
+    - Reusable
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDWebImage
+    - SwiftLint
+    - Then
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
+  SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+
+PODFILE CHECKSUM: bbf870dd807a5b40a2f9f1dacb421d734b9b096f
+
+COCOAPODS: 1.15.2
