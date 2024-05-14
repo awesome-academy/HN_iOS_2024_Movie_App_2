@@ -52,13 +52,14 @@
 
 // MARK: - Common
 
-"cancel" = "Cancel";
-"error" = "Error";
-"error.message" = "Failed to load data";
+"common.cancel" = "Cancel";
+"common.error" = "Error";
+"common.ok" = "OK";
+"common.error.message" = "Failed to load data";
 "success" = "Success!!!";
-"success.message" = "Completed successfully";
-"noInternet" = "No internet connection.";
-"runtime: %@ minutes" = "Run time: %@ minutes";
+"common.success.message" = "Completed successfully";
+"common.noInternet" = "No internet connection.";
+"common.runtime: %@ minutes" = "Run time: %@ minutes";
 
 // MARK: Noti
 "noti.title" = "New movie available!";

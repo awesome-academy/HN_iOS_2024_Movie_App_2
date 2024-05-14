@@ -1,0 +1,14 @@
+//
+//  AppConfig.xcconfig
+//  MovieHubRx
+//
+//  Created by Duy Nguyễn on 14/05/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+API_KEY = 95d6a6ef93001af6e75d828b5716d601
+BASE_URL = https:\/\/api.themoviedb.org/3
+IMAGE_URL = https:\/\/image.tmdb.org/t/p/w500/
+TERM_URL = https:\/\/sites.google.com/view/moviehub-terms-of-service
+POLICY_URL = https:\/\/sites.google.com/view/moviehub-privacy-policy

@@ -6,6 +6,12 @@ PODS:
   - Localize-Swift/LocalizeSwiftCore (3.2.0)
   - Localize-Swift/UIKit (3.2.0):
     - Localize-Swift/LocalizeSwiftCore
+  - MBProgressHUD (1.2.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
   - ObjectMapper (4.4.2)
   - Reusable (4.1.2):
     - Reusable/Storyboard (= 4.1.2)
@@ -27,6 +33,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.9.1)
   - Localize-Swift (~> 3.2)
+  - MBProgressHUD (~> 1.2.0)
+  - Moya/RxSwift (~> 15.0.0)
   - ObjectMapper (~> 4.4.2)
   - Reusable (= 4.1.2)
   - RxCocoa (= 6.5.0)
@@ -39,6 +47,8 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Localize-Swift
+    - MBProgressHUD
+    - Moya
     - ObjectMapper
     - Reusable
     - RxCocoa
@@ -51,6 +61,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -60,6 +72,6 @@ SPEC CHECKSUMS:
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: bbf870dd807a5b40a2f9f1dacb421d734b9b096f
+PODFILE CHECKSUM: a1811fbd01604ca7c05d59e81ed657f244dbee16
 
 COCOAPODS: 1.15.2
