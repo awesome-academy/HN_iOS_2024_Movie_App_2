@@ -52,13 +52,14 @@
 "actor.place" = "Nơi ở: ";
 // MARK: - Common
 
-"cancel" = "Huỷ";
-"error" = "Lỗi";
-"error.message" = "Không thể tải dữ liệu";
-"success" = "Thành công!!!";
-"success.message" = "Hoàn thành thành công";
-"noInternet" = "Không có kết nối mạng";
-"runtime: %@ minutes" = "Thời gian: %@ phút";
+"common.cancel" = "Huỷ";
+"common.error" = "Lỗi";
+"common.ok" = "OK";
+"common.error.message" = "Không thể tải dữ liệu";
+"common.success" = "Thành công!!!";
+"common.success.message" = "Hoàn thành thành công";
+"common.noInternet" = "Không có kết nối mạng";
+"common.runtime: %@ minutes" = "Thời gian: %@ phút";
 
 // MARK: Noti
 "noti.title" = "Có phim mới !!";

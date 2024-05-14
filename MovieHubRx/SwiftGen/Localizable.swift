@@ -11,11 +11,15 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
   /// Favorites
-  internal static let home = L10n.tr("Localizable", "home")
+    internal static let home = L10n.tr("Localizable", "home")
   /// Home
-  internal static let favorite = L10n.tr("Localizable", "favorite")
+    internal static let favorite = L10n.tr("Localizable", "favorite")
   /// Setting
-  internal static let setting = L10n.tr("Localizable", "setting.title")
+    internal static let setting = L10n.tr("Localizable", "setting.title")
+    
+    internal static let ok = L10n.tr("Localizable", "common.ok")
+    internal static let error = L10n.tr("Localizable", "common.error")
+
 
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

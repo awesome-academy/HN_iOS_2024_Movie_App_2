@@ -15,4 +15,6 @@ struct Constants {
     static let minLineSpacing = 5.0
     static let spacingForSection = 8.0
     static let insetForSection = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    static let rowHeight = 170.0
+
 }

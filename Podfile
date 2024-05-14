@@ -13,6 +13,9 @@ target 'MovieHubRx' do
   pod 'Reusable', '4.1.2'
   pod 'SwiftLint', '0.54.0'
   pod 'Localize-Swift', '~> 3.2'
+  pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'Moya/RxSwift', '~> 15.0.0'
+
   # Pods for MovieHubRx
 
 end
