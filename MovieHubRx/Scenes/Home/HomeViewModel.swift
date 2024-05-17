@@ -61,7 +61,7 @@ extension HomeViewModel: ViewModelType {
         input.searchTrigger
             .drive(onNext: navigator.toSearchScreen)
             .disposed(by: disposeBag)
-
+        
         return Output(movies: dataSource.asDriver(),
                       error: error.asDriver(),
                       indicator: indicator.asDriver()

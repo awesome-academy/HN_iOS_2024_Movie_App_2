@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.9.1)
+  - Differentiator (5.0.0)
   - Localize-Swift (3.2.0):
     - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
     - Localize-Swift/UIKit (= 3.2.0)
@@ -21,6 +22,10 @@ PODS:
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
@@ -38,6 +43,7 @@ DEPENDENCIES:
   - ObjectMapper (~> 4.4.2)
   - Reusable (= 4.1.2)
   - RxCocoa (= 6.5.0)
+  - RxDataSources (~> 5.0)
   - RxSwift (= 6.5.0)
   - SDWebImage (~> 5.0)
   - SwiftLint (= 0.54.0)
@@ -46,12 +52,14 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Differentiator
     - Localize-Swift
     - MBProgressHUD
     - Moya
     - ObjectMapper
     - Reusable
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
     - SDWebImage
@@ -60,18 +68,20 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: a1811fbd01604ca7c05d59e81ed657f244dbee16
+PODFILE CHECKSUM: 337066a19442263ba0c329f6c26b2f83327a02cf
 
 COCOAPODS: 1.15.2

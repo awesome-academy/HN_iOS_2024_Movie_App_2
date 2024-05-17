@@ -44,10 +44,10 @@ final class MovieTableViewCell: UITableViewCell, NibReusable {
     }
     
     func bind(movie: Movie) {
-        let imageUrlString = APIUrls.Endpoint.image(urlString: movie.poster ?? "").url
+        let imageUrlString = APIUrls.Endpoint.image(urlString: movie.poster).url
         posterImageView.sd_setImage(with: URL(string: imageUrlString))
         movieNameLabel.text = movie.title
-        let voteLabel = (movie.voteAverage ?? 0.0).toStringRating()
+        let voteLabel = movie.voteAverage.toStringRating()
         rateLabel.text = voteLabel
         releaseDateLabel.text = movie.releaseDate
     }

@@ -15,6 +15,7 @@ struct APIUrls {
     let imageUrl: String
     let termUrl: String
     let policyUrl: String
+    let youtubeUrl: String
     
     private init() {
         guard let key = Bundle.main.infoDictionary?["API_KEY"] as? String else {
@@ -37,20 +38,28 @@ struct APIUrls {
             fatalError("URL is missing in Info.plist")
         }
         
+        guard let youtubeUrl = Bundle.main.infoDictionary?["YOUTUBE_URL"] as? String else {
+            fatalError("URL is missing in Info.plist")
+        }
+        
         self.key = key
         self.baseUrl = baseUrl.replacingOccurrences(of: "\\", with: "")
         self.imageUrl = imageUrl.replacingOccurrences(of: "\\", with: "")
         self.termUrl = termUrl.replacingOccurrences(of: "\\", with: "")
         self.policyUrl = policyUrl.replacingOccurrences(of: "\\", with: "")
+        self.youtubeUrl = youtubeUrl.replacingOccurrences(of: "\\", with: "")
     }
     
     enum Endpoint {
         case image(urlString: String)
+        case youtube(urlString: String)
         
         var url: String {
             switch self {
             case .image(let urlString):
                 return "\(APIUrls.shared.imageUrl)\(urlString)"
+            case .youtube(let key):
+                return "\(APIUrls.shared.youtubeUrl)\(key)"
             }
         }
     }

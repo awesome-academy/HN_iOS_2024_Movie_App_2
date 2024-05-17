@@ -16,4 +16,5 @@ protocol FavoriteNavigatorType {
 
 struct FavoriteNavigator: FavoriteNavigatorType {
     unowned let navigationController: UINavigationController
+    
 }

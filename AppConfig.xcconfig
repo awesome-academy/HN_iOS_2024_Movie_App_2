@@ -12,3 +12,4 @@ BASE_URL = https:\/\/api.themoviedb.org/3
 IMAGE_URL = https:\/\/image.tmdb.org/t/p/w500/
 TERM_URL = https:\/\/sites.google.com/view/moviehub-terms-of-service
 POLICY_URL = https:\/\/sites.google.com/view/moviehub-privacy-policy
+YOUTUBE_URL = https:\/\/www.youtube.com/watch?v=
