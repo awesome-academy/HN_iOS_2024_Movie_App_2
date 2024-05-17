@@ -11,9 +11,13 @@ import RxSwift
 import RxCocoa
 
 protocol SearchUseCaseType {
-    
+    func getSearchMovie(query: String, page: Int) -> Observable<[Movie]>
 }
 
 struct SearchUseCase: SearchUseCaseType {
+    let movieRepository: MovieRepositoryType
     
+    func getSearchMovie(query: String, page: Int) -> Observable<[Movie]> {
+        return movieRepository.getSearchMovie(query: query, page: page)
+    }
 }

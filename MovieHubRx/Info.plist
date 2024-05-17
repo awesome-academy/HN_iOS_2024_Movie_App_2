@@ -29,5 +29,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>YOUTUBE_URL</key>
+	<string>$(YOUTUBE_URL)</string>
 </dict>
 </plist>

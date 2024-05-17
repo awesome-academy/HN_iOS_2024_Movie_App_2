@@ -26,7 +26,7 @@ extension FavoriteViewModel: ViewModelType {
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
-      
+   
         return Output()
     }
 }

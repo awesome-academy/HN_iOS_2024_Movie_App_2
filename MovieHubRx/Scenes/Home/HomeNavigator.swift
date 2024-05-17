@@ -18,7 +18,7 @@ struct HomeNavigator: HomeNavigatorType {
     
     func toMovieDetailScreen(movie: Movie) {
         let viewController = MovieDetailViewController()
-        let useCase = MovieDetailUseCase()
+        let useCase = MovieDetailUseCase(movieRepository: MovieRepository())
         let navigator = MovieDetailNavigator(navigationController: navigationController)
         let viewModel = MovieDetailViewModel(useCase: useCase, navigator: navigator, movie: movie)
         viewController.bindViewModel(to: viewModel)
@@ -27,7 +27,7 @@ struct HomeNavigator: HomeNavigatorType {
     
     func toSearchScreen() {
         let viewController = SearchViewController()
-        let useCase = SearchUseCase()
+        let useCase = SearchUseCase(movieRepository: MovieRepository())
         let navigator = SearchNavigator(navigationController: navigationController)
         let viewModel = SearchViewModel(useCase: useCase, navigator: navigator)
         viewController.bindViewModel(to: viewModel)

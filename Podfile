@@ -15,7 +15,8 @@ target 'MovieHubRx' do
   pod 'Localize-Swift', '~> 3.2'
   pod 'MBProgressHUD', '~> 1.2.0'
   pod 'Moya/RxSwift', '~> 15.0.0'
-
+  pod 'RxDataSources', '~> 5.0'
+  
   # Pods for MovieHubRx
 
 end

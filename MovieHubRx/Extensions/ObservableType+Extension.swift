@@ -16,3 +16,9 @@ extension ObservableType {
         }
     }
 }
+
+extension SharedSequence {
+    public func unwrap<Result>() -> SharedSequence<SharingStrategy, Result> where Element == Result? {
+        return self.filter { $0 != nil }.compactMap { $0 }
+    }
+}

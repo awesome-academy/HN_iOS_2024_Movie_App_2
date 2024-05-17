@@ -8,12 +8,24 @@
 import Foundation
 import ObjectMapper
 
-struct MovieResponse: Mappable {
-    var results = [Movie]()
-    
-    init?(map: Map) {}
+struct MovieResponse {
+    var results: [Movie]
+}
+
+extension MovieResponse {
+    init?(map: Map) {
+        self.init()
+    }
     
     mutating func mapping(map: Map) {
         results <- map["results"]
+    }
+}
+
+extension MovieResponse: Mappable {
+    init() {
+        self.init(
+            results: [Movie]()
+        )
     }
 }

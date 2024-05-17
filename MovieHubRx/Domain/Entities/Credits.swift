@@ -8,14 +8,27 @@
 import Foundation
 import ObjectMapper
 
-struct Credits: Mappable {
-    var id = 0
-    var cast = [Cast]()
-    
-    init?(map: Map) {}
+struct Credits {
+    var id: Int
+    var cast: [Cast]
+}
+
+extension Credits {
+    init?(map: Map) {
+        self.init()
+    }
     
     mutating func mapping(map: Map) {
         id <- map["id"]
         cast <- map["cast"]
+    }
+}
+
+extension Credits: Mappable {
+    init() {
+        self.init(
+            id: 0,
+            cast: [Cast]()
+        )
     }
 }

@@ -8,17 +8,21 @@
 import Foundation
 import ObjectMapper
 
-struct Actor: Mappable {
-    var id = 0
-    var name = ""
-    var birthday: String?
-    var place: String?
-    var profilePath: String?
-    var biography: String?
-    var knownFor: String?
-    var movieCredits: MovieCredits?
-    
-    init?(map: Map) {}
+struct Actor {
+    var id: Int
+    var name: String
+    var birthday: String
+    var place: String
+    var profilePath: String
+    var biography: String
+    var knownFor: String
+    var movieCredits: MovieCredits
+}
+
+extension Actor {
+    init?(map: Map) {
+        self.init()
+    }
     
     mutating func mapping(map: Map) {
         id <- map["id"]
@@ -29,5 +33,20 @@ struct Actor: Mappable {
         biography <- map["biography"]
         knownFor <- map["known_for_department"]
         movieCredits <- map["movie_credits"]
+    }
+}
+
+extension Actor: Mappable {
+    init() {
+        self.init(
+            id: 0,
+            name: "",
+            birthday: "",
+            place: "",
+            profilePath: "",
+            biography: "",
+            knownFor: "",
+            movieCredits: MovieCredits()
+        )
     }
 }
