@@ -12,7 +12,7 @@ import RxCocoa
 public protocol Bindable: AnyObject {
     associatedtype ViewModelType
     
-    var disposeBag: DisposeBag! { get set }
+    var disposeBag: DisposeBag { get set }
     var viewModel: ViewModelType! { get set }
     
     func bindViewModel()

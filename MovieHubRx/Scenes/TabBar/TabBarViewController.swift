@@ -11,7 +11,7 @@ import RxCocoa
 
 final class TabBarViewController: UITabBarController, Bindable {
     var viewModel: TabBarViewModel!
-    var disposeBag: DisposeBag! = DisposeBag()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()

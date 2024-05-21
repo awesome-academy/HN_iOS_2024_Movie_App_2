@@ -16,7 +16,7 @@ final class SearchViewController: UIViewController, Bindable, NibReusable {
     @IBOutlet private weak var tableView: UITableView!
     
     var viewModel: SearchViewModel!
-    var disposeBag: DisposeBag! = DisposeBag()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
