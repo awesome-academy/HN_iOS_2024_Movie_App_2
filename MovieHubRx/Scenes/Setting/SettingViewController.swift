@@ -12,7 +12,7 @@ import RxCocoa
 final class SettingViewController: UIViewController, Bindable {
     
     var viewModel: SettingViewModel!
-    var disposeBag: DisposeBag!
+    var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()

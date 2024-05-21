@@ -19,6 +19,7 @@ extension MovieDetailViewModel: ViewModelType {
     struct Input {
         let loadTrigger: Driver<Void>
         let selectedSimilarTrigger: Driver<Movie>
+        let selectedActorTrigger: Driver<Int?>
         let favoritedTrigger: Driver<Bool>
         let playTrigger: Driver<String?>
     }
@@ -83,6 +84,10 @@ extension MovieDetailViewModel: ViewModelType {
         
         input.selectedSimilarTrigger
             .drive(onNext: navigator.toMovieDetail)
+            .disposed(by: disposeBag)
+        
+        input.selectedActorTrigger
+            .drive(onNext: navigator.toActorScreen)
             .disposed(by: disposeBag)
         
         input.playTrigger

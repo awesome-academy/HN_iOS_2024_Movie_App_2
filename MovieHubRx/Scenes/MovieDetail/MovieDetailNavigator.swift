@@ -10,6 +10,7 @@ import UIKit
 
 protocol MovieDetailNavigatorType {
     func toMovieDetail(_ movie: Movie)
+    func toActorScreen(_ castID: Int?)
     func toYoutubeTrailer(key: String?)
 }
 
@@ -21,6 +22,15 @@ struct MovieDetailNavigator:  MovieDetailNavigatorType {
         let useCase = MovieDetailUseCase(movieRepository: MovieRepository())
         let navigator = MovieDetailNavigator(navigationController: navigationController)
         let viewModel = MovieDetailViewModel(useCase: useCase, navigator: navigator, movie: movie)
+        viewController.bindViewModel(to: viewModel)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func toActorScreen(_ castID: Int?) {
+        let viewController = ActorViewController()
+        let useCase = ActorUseCase(movieRepository: MovieRepository())
+        let navigator = ActorNavigator(navigationController: navigationController)
+        let viewModel = ActorViewModel(useCase: useCase, navigator: navigator, actorID: castID)
         viewController.bindViewModel(to: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }

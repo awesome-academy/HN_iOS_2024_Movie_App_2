@@ -17,9 +17,10 @@ final class MovieDetailViewController: UIViewController, Bindable, NibReusable, 
     
     typealias DataSource = RxTableViewSectionedReloadDataSource<DetailsSectionModel>
     var viewModel: MovieDetailViewModel!
-    var disposeBag: DisposeBag! = DisposeBag()
+    var disposeBag = DisposeBag()
     
     private let similarMovie  = PublishSubject<Movie>()
+    private let selectedActorTrigger = PublishSubject<Int?>()
     private let favoriteButtonTrigger = PublishSubject<Bool>()
     private let loadTrigger = BehaviorSubject<Void>(value: ())
     private let playTrigger = PublishSubject<String?>()
@@ -50,6 +51,7 @@ final class MovieDetailViewController: UIViewController, Bindable, NibReusable, 
         let input = MovieDetailViewModel.Input(
             loadTrigger: loadTrigger.asDriver(onErrorJustReturn: ()),
             selectedSimilarTrigger: similarMovie.asDriver(onErrorJustReturn: Movie()),
+            selectedActorTrigger: selectedActorTrigger.asDriver(onErrorJustReturn: nil),
             favoritedTrigger: favoriteButtonTrigger.asDriver(onErrorJustReturn: false),
             playTrigger: playTrigger.asDriver(onErrorJustReturn: nil)
         )
@@ -92,6 +94,10 @@ extension MovieDetailViewController {
             case .casts(let model):
                 let cell = tableView.dequeueReusableCell(for: indexPath,
                                                          cellType: CastTableViewCell.self)
+                cell.tappedCast = { [weak self] cast in
+                    guard let self else { return }
+                    self.selectedActorTrigger.onNext(cast.id)
+                }
                 cell.bind(data: model.cast)
                 return cell
                 

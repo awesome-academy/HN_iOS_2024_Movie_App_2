@@ -17,6 +17,10 @@ struct Actor {
     var biography: String
     var knownFor: String
     var movieCredits: MovieCredits
+    
+    var profileURL: URL? {
+        return URL(string: APIUrls.shared.imageUrl + profilePath)
+    }
 }
 
 extension Actor {

@@ -12,7 +12,7 @@ import RxCocoa
 final class FavoriteViewController: UIViewController, Bindable {
     
     var viewModel: FavoriteViewModel!
-    var disposeBag: DisposeBag!
+    var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()

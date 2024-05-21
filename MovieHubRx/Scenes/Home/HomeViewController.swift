@@ -18,7 +18,7 @@ final class HomeViewController: UIViewController, Bindable, NibReusable {
     @IBOutlet private weak var searchButton: UIButton!
     
     var viewModel: HomeViewModel!
-    var disposeBag: DisposeBag! = DisposeBag()
+    var disposeBag = DisposeBag()
     
     private let loadTrigger = BehaviorRelay<Int>(value: 1)
 
