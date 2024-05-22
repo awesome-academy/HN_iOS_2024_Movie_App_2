@@ -36,29 +36,33 @@ extension MovieDetailViewModel: ViewModelType {
         let indicator = ActivityIndicator()
         let error = ErrorTracker()
         
-        input.loadTrigger
+        let addMovie = input.favoritedTrigger
+            .filter { !$0 }
+            .flatMapLatest { _ -> Driver<Bool> in
+                return useCase.addMovie(movie: movie)
+                    .trackActivity(indicator)
+                    .trackError(error)
+                    .asDriverOnErrorJustComplete()
+            }
+        
+        let deleteMovie = input.favoritedTrigger
+            .filter { $0 }
+            .flatMapLatest { _ -> Driver<Bool> in
+                return useCase.deleteMovie(movieID: movie.id)
+                    .trackActivity(indicator)
+                    .trackError(error)
+                    .asDriverOnErrorJustComplete()
+            }
+        
+        let statusUpdated = Driver.merge(addMovie, deleteMovie)
+            .mapToVoid()
+        
+        Driver.merge(input.loadTrigger, statusUpdated.asDriver())
             .flatMapLatest {
                 return useCase.checkMovieInFavorites(movieID: movie.id)
                     .trackActivity(indicator)
                     .trackError(error)
                     .asDriverOnErrorJustComplete()
-            }
-            .drive(onNext: favoriteStatus.onNext(_:))
-            .disposed(by: disposeBag)
-        
-        input.favoritedTrigger
-            .flatMapLatest { isFavorited -> Driver<Bool> in
-                if isFavorited {
-                    return  useCase.deleteMovie(movieID: movie.id)
-                        .trackActivity(indicator)
-                        .trackError(error)
-                        .asDriverOnErrorJustComplete()
-                } else {
-                    return useCase.addMovie(movie: movie)
-                        .trackActivity(indicator)
-                        .trackError(error)
-                        .asDriverOnErrorJustComplete()
-                }
             }
             .drive(onNext: favoriteStatus.onNext(_:))
             .disposed(by: disposeBag)

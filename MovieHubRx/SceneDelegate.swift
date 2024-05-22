@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
+        setupTheme()
         binding(window: window)
     }
 }
@@ -30,7 +31,23 @@ extension SceneDelegate {
         let navigator = AppNavigator(window: window)
         let viewModel = AppViewModel(useCase: useCase, navigator: navigator)
         
-        let input = AppViewModel.Input(loadTrigger: Driver.just(()))
+        let changeLanguageTrigger = NotificationCenter.default
+            .rx
+            .notification(.languageChanged)
+            .asDriverOnErrorJustComplete()
+            .mapToVoid()
+        
+        let input = AppViewModel.Input(loadTrigger: Driver.just(()),
+                                       changeLanguageTrigger: changeLanguageTrigger)
         _ = viewModel.transform(input, disposeBag: disposeBag)
+    }
+}
+
+extension SceneDelegate {
+    private func setupTheme() {
+        guard let rawValue = UserDefaults.standard.value(forKey: UserDefaultsKey.theme.rawValue) as? Int,
+              let theme = ThemeType(rawValue: rawValue),
+              let window = window else { return }
+        window.overrideUserInterfaceStyle = theme.uiUserInterfaceStyle
     }
 }

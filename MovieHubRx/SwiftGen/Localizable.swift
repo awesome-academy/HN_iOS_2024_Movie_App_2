@@ -12,6 +12,9 @@ import Foundation
 internal enum L10n {
   /// Favorites
     internal static let home = L10n.tr("Localizable", "home")
+    internal static let homeWelcome = L10n.tr("Localizable", "home.welcome")
+    internal static let homeBio = L10n.tr("Localizable", "home.bio")
+
   /// Home
     internal static let favorite = L10n.tr("Localizable", "favorite")
   /// Setting
@@ -19,8 +22,19 @@ internal enum L10n {
     
     internal static let ok = L10n.tr("Localizable", "common.ok")
     internal static let error = L10n.tr("Localizable", "common.error")
-
-
+    internal static let theme = L10n.tr("Localizable", "setting.theme")
+    
+    internal static let themeTitle = L10n.tr("Localizable", "setting.theme.title")
+    internal static let darkTheme = L10n.tr("Localizable", "setting.theme.dark")
+    internal static let lightTheme = L10n.tr("Localizable", "setting.theme.light")
+    internal static let systemTheme = L10n.tr("Localizable", "setting.theme.system")
+    internal static let language = L10n.tr("Localizable", "setting.language")
+    internal static let languageTitle = L10n.tr("Localizable", "setting.language.title")
+    internal static let vnLanguage = L10n.tr("Localizable", "setting.language.vn")
+    internal static let enLanguage = L10n.tr("Localizable", "setting.language.en")
+    internal static let cancel = L10n.tr("Localizable", "cancel")
+    internal static let term = L10n.tr("Localizable", "setting.terms")
+    internal static let policy = L10n.tr("Localizable", "setting.policy")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

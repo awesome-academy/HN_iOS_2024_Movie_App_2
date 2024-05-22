@@ -17,6 +17,7 @@ struct AppViewModel {
 extension AppViewModel: ViewModelType {
     struct Input {
         let loadTrigger: Driver<Void>
+        let changeLanguageTrigger: Driver<Void>
     }
     
     struct Output {
@@ -24,9 +25,11 @@ extension AppViewModel: ViewModelType {
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
-        input.loadTrigger
+        Driver.merge(input.loadTrigger,
+                     input.changeLanguageTrigger)
             .drive(onNext: self.navigator.toTabBar)
             .disposed(by: disposeBag)
+        
         return Output()
     }
 }

@@ -9,9 +9,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Reusable
+import Localize_Swift
 
 final class HomeViewController: UIViewController, Bindable, NibReusable {
 
+    @IBOutlet private weak var welcomeTitleLabel: UILabel!
+    @IBOutlet private weak var placeHolderLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchImageView: UIImageView!
     @IBOutlet private weak var searchView: UIView!
@@ -28,6 +31,8 @@ final class HomeViewController: UIViewController, Bindable, NibReusable {
     }
     
     private func configView() {
+        welcomeTitleLabel.text = "home.welcome".localized()
+        placeHolderLabel.text = "home.bio".localized()
         tableView.do {
             $0.delegate = self
             $0.separatorStyle = .none
