@@ -1,5 +1,7 @@
 strings:
-  inputs: MovieHubRx/Resource/en.lproj
+  inputs:
+    - MovieHubRx/Resource/en.lproj/Localizable.strings
+
   outputs:
     - templateName: structured-swift5
       output: MovieHubRx/SwiftGen/Localizable.swift

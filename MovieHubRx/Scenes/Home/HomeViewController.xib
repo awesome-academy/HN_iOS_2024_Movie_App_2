@@ -10,11 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MovieHubRx" customModuleProvider="target">
             <connections>
+                <outlet property="placeHolderLabel" destination="Dau-yK-4tE" id="Ayz-h4-lFG"/>
                 <outlet property="searchButton" destination="Uf4-yt-Jxx" id="Eaa-Ef-gFX"/>
                 <outlet property="searchImageView" destination="0AV-gx-cV2" id="VTR-2t-qcr"/>
                 <outlet property="searchView" destination="evE-Dd-zsp" id="Jb3-dm-e7H"/>
                 <outlet property="tableView" destination="kvd-qY-im9" id="XTl-8u-xuy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="welcomeTitleLabel" destination="Ocj-92-jdn" id="lj2-nQ-eaq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

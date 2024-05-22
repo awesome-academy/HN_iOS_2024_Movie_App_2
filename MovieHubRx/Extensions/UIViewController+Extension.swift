@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 extension UIViewController {
     func showError(message: String, completion: (() -> Void)? = nil) {
@@ -18,5 +19,13 @@ extension UIViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func presentSafariViewController(with urlString: String) {
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
     }
 }
