@@ -10,13 +10,13 @@ import RxSwift
 import RxCocoa
 
 protocol FavoriteUseCaseType {
-    func getAllFavorite() -> Observable<[MovieFavorite]>
+    func getAllFavorite() -> Observable<[Movie]>
 }
 
 struct FavoriteUseCase: FavoriteUseCaseType {
     let movieRepository: MovieRepositoryType
     
-    func getAllFavorite() -> Observable<[MovieFavorite]> {
+    func getAllFavorite() -> Observable<[Movie]> {
         return movieRepository.fetchFavoriteMovies()
     }
 }

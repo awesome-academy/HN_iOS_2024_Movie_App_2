@@ -79,8 +79,8 @@ extension MovieDetailViewModel: ViewModelType {
                                                        favoriteStatus.asDriverOnErrorJustComplete())
             .map { movieDetails, isFavorted -> [DetailsSectionModel] in
                 let infoItem = SectionItems.info(model: movieDetails, favoriteStatus: isFavorted)
-                let castsItem = SectionItems.casts(model: movieDetails.credits)
-                let similarItem = SectionItems.similar(model: movieDetails.similar.results)
+                let castsItem = SectionItems.casts(model: movieDetails.credits ?? Credits())
+                let similarItem = SectionItems.similar(model: movieDetails.similar?.results ?? [])
                 let items: [SectionItems] = [infoItem, castsItem, similarItem]
                 return [.detail(items: items)]
             }

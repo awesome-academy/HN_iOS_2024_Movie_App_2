@@ -18,9 +18,9 @@ struct Movie {
     var overview: String
     var runtime: Int
     var voteAverage: Double
-    var credits: Credits
-    var similar: MovieResponse
-    var videos: VideoResponse
+    var credits: Credits?
+    var similar: MovieResponse?
+    var videos: VideoResponse?
     
     var backDropURL: URL? {
          return URL(string: APIUrls.shared.imageUrl + backDropPath)
@@ -62,9 +62,9 @@ extension Movie: Mappable {
             overview: "",
             runtime: 0,
             voteAverage: 0.0,
-            credits: Credits(),
-            similar: MovieResponse(),
-            videos: VideoResponse()
+            credits: nil,
+            similar: nil,
+            videos: nil
         )
     }
 }
@@ -81,5 +81,23 @@ extension Movie {
         favoriteMovie.runtime = Int32(self.runtime)
         favoriteMovie.voteAverage = self.voteAverage
         return favoriteMovie
+    }
+}
+
+extension MovieFavorite {
+    func toMovie() -> Movie {
+        return Movie(
+            id: Int(self.id),
+            title: self.title ?? "",
+            poster: self.poster ?? "",
+            backDropPath: self.backDropPath ?? "",
+            releaseDate: self.releaseDate ?? "",
+            overview: self.overview ?? "",
+            runtime: Int(self.runtime),
+            voteAverage: self.voteAverage,
+            credits: nil,
+            similar: nil,
+            videos: nil
+        )
     }
 }

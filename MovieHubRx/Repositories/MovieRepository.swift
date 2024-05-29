@@ -18,7 +18,7 @@ protocol MovieRepositoryType {
     func getActorDetail(id: Int) -> Observable<Actor>
     func save(favoriteMovie: Movie) -> Observable<Bool>
     func delete(movieID: Int) -> Observable<Bool>
-    func fetchFavoriteMovies() -> Observable<[MovieFavorite]>
+    func fetchFavoriteMovies() -> Observable<[Movie]>
     func isMovieInFavorites(movieID: Int) -> Observable<Bool>
 }
 
@@ -74,9 +74,10 @@ struct MovieRepository: MovieRepositoryType {
             }
     }
     
-    func fetchFavoriteMovies() -> Observable<[MovieFavorite]> {
+    func fetchFavoriteMovies() -> Observable<[Movie]> {
         let fetchRequest: NSFetchRequest<MovieFavorite> = MovieFavorite.fetchRequest()
         return CoreDataManager.shared.fetch(request: fetchRequest)
+            .map {  $0.compactMap { $0.toMovie() }}
     }
     
     func isMovieInFavorites(movieID: Int) -> Observable<Bool> {
