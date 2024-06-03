@@ -68,7 +68,7 @@ final class MovieDetailInfoCell: UITableViewCell, NibReusable {
             posterImageView.sd_setImage(with: posterURL)
         }
         
-        key = movie.videos.results.first?.key
+        key = movie.videos?.results.first?.key
         updateFavoriteButtonImage(isFavorited: isFavorited)
     }
     
